@@ -6,9 +6,13 @@ package lectures.part2oop
   */
 object Inheritance extends App {
 
+  val cat = new Cat
+  val dog = new Dog
+
   class Animal {
     protected def eat = println(s"Nom, nom, nom")
   }
+  cat.crunch
 
   class Cat extends Animal {
     def crunch = {
@@ -16,9 +20,6 @@ object Inheritance extends App {
       println("crunch crunch")
     }
   }
-
-  val cat = new Cat
-  cat.crunch
 
   class Person(name: String, age: Int) {
     def this(name: String) = this(name, 0)
@@ -29,7 +30,5 @@ object Inheritance extends App {
   class Dog extends Animal {
     override def eat = println("Crunch Woof!")
   }
-
-  val dog = new Dog
   dog.eat
 }

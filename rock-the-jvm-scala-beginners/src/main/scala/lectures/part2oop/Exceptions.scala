@@ -15,12 +15,6 @@ object Exceptions extends App {
 
   // throwable classes extend the Throwable class
   // Exception and Error are the major Throwable subtypes
-
-  // 2. how to catch exceptions
-  def getInt(withExceptions: Boolean): Int =
-    if (withExceptions) throw new RuntimeException("No int for you!")
-    else 42
-
   val potentialFail = try {
     // code that might throw
     getInt(false)
@@ -35,13 +29,17 @@ object Exceptions extends App {
     // use finally only for side effects
     println("finally")
   }
+  val exception = new MyException
 
   println(potentialFail)
 
+  // 2. how to catch exceptions
+  def getInt(withExceptions: Boolean): Int =
+    if (withExceptions) throw new RuntimeException("No int for you!")
+    else 42
+
   // 3. how to define your own exceptions
   class MyException extends Exception
-
-  val exception = new MyException
 
   // will throw exception
   // throw exception
@@ -91,7 +89,6 @@ object Exceptions extends App {
 
   //println(PocketCalculator.add(Int.MaxValue, 10))
   println(PocketCalculator.divide(2, 0))
-
 
 
 }
