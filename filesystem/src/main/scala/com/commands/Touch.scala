@@ -1,14 +1,14 @@
 package com.commands
 
-import com.files.{DirEntry, Directory}
+import com.files.{DirEntry, File}
 import com.filesystem.State
 
 /**
   *
   * @author vsushko
   */
-class Mkdir(name: String) extends CreateEntry(name) {
+class Touch(name: String) extends CreateEntry(name) {
 
   override def createSpecificEntry(state: State): DirEntry =
-    Directory.empty(state.wd.path, name)
+    File.empty(state.wd.path, name)
 }
