@@ -14,7 +14,7 @@ class Directory(override val parentPath: String, override val name: String, val 
     @tailrec
     def findEntryHelper(name: String, contentList: List[DirEntry]): DirEntry =
       if (contentList.isEmpty) null
-      else if (contentList.head.name.equals()) contentList.head
+      else if (contentList.head.name.equals(name)) contentList.head
       else findEntryHelper(name, contentList.tail)
 
     findEntryHelper(entryName, contents)
