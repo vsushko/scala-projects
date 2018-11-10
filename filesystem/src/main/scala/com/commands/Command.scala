@@ -6,9 +6,7 @@ import com.filesystem.State
   *
   * @author vsushko
   */
-trait Command {
-
-  def apply(state: State): State
+trait Command extends (State => State) {
 }
 
 object Command {
