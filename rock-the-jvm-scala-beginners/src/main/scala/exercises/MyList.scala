@@ -179,6 +179,15 @@ object ListTest extends App {
 
   // often use when we want to collapse all the data to one value
   println(listOfIntegers.fold(0)(_ + _))
+
+  // for comprehensions
+  val combinations = for {
+    n <- listOfIntegers
+    string <- listOfStrings
+  } yield n + "-" + string
+
+  println(combinations)
+
 }
 
 // Scala offers class-based inheritance
