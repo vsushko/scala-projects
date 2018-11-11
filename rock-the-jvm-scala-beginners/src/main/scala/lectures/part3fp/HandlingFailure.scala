@@ -54,7 +54,7 @@ object HandlingFailure extends App {
   /*
       Exercise
    */
-  val hostname = "localhost"
+  val host = "localhost"
   val port = "8080"
 
   def renderHTML(page: String) = println(page)
@@ -81,7 +81,31 @@ object HandlingFailure extends App {
   }
 
   // if you get the html page from the connection, print it to the console i.e. call renderHTML
-  // val possibleConnection = HttpService.get
+  val possibleConnection = HttpService.getSafeConnection(host, port)
 
+  val possibleHTML = possibleConnection.flatMap(connection => connection.getSafe("/home"))
+  possibleHTML.foreach(renderHTML)
+
+  // shorthand version
+  HttpService.getSafeConnection(host, port)
+    .flatMap(connection => connection.getSafe("/home"))
+    .foreach(renderHTML)
+
+  // for-comprehension version
+  for {
+    connection <- HttpService.getSafeConnection(host, port)
+    html <- connection.getSafe("/home")
+  } renderHTML(html)
+
+  /* equivalent logic in imperative language:
+      try {
+        connection = HttpService.getConnection(host, port)
+        try {
+          connection.get("/home")
+          renderHtml(page)
+        } catch (some other exception) {
+      } catch (exception) {
+      }
+   */
 
 }
