@@ -1,0 +1,7 @@
+/**
+  *
+  * @author vsushko
+  */
+class TalkToActor {
+
+}
