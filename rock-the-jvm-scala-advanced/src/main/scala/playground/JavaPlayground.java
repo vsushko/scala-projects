@@ -11,16 +11,15 @@ public class JavaPlayground {
         System.out.println("Hello Java");
 
         MinutesSeconds[] minutesSeconds = new MinutesSeconds[]{
-                new MinutesSeconds(5,26),
-                new MinutesSeconds(4,8),
-                new MinutesSeconds(2,10),
-                new MinutesSeconds(6,35),
-                new MinutesSeconds(9,33),
-                new MinutesSeconds(6,5),
-                new MinutesSeconds(4,8),
-                new MinutesSeconds(9,10),
-                new MinutesSeconds(2,38)
-
+                new MinutesSeconds(1,0),
+                new MinutesSeconds(1,24),
+                new MinutesSeconds(1,23),
+                new MinutesSeconds(2,31),
+                new MinutesSeconds(2,17),
+                new MinutesSeconds(2,36),
+                new MinutesSeconds(3,8),
+                new MinutesSeconds(5,50),
+                new MinutesSeconds(1,16)
         };
 
         DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm:ss");
