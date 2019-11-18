@@ -1,5 +1,7 @@
 package chapter3
 
+import scala.language.postfixOps
+
 /**
   *
   * @author vsushko
@@ -117,10 +119,53 @@ object Lists extends App {
   } else
     Console.err.println("Please enter filename")
 
-  // classes
+  // string and formatting
+  println(
+    """Welcome to Ultamix 3000
+      |type "HELP" for help
+    """.stripMargin)
 
+  val s = 'aSymbol
+  println(s.name)
 
+  // string interpolation
+  val name = "reader"
+  println(s"Hello $name")
 
+  println(s"The answer is ${6 * 7}")
 
+  println(raw"No\\\\escape!")
+
+  println(f"${math.Pi}%.5f")
+
+  println(1.+(2))
+
+  println(1 + 2L)
+
+  val str = "Hello world!"
+  println(str indexOf 'o')
+
+  println(str indexOf('o', 5))
+
+  println(2.0.unary_-)
+
+  // toLowerCase is a function without side effects
+  println(str toLowerCase)
+
+  println(List(1, 2, 3) == List(1, 2, 3))
+  println(1 == 1.0)
+  println(List(1, 2, 3) == "hello")
+  println(List(1, 2, 3) == null)
+  println(("he" + "llo") == "hello")
+
+  println(0 max 5)
+  println(0 min 5)
+  println(-2.7 abs)
+  println(-2.7 round)
+  println(1.4 isInfinity)
+  println((1.0 / 0) isInfinity)
+  println(4 to 8)
+  println("bob" capitalize)
+  println("robert" drop 2)
 }
 
