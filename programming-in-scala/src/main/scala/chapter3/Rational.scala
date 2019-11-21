@@ -99,4 +99,34 @@ object RationalTester extends App {
       if file.getName.endsWith(".scala")
     } yield file
 
+  val firstArg = if (args.length > 0) args(0) else ""
+
+  var friend = firstArg match {
+    case "salt" => println("pepper")
+    case "chips" => println("salsa")
+    case "eggs" => println("bacon")
+    case _ => println("huh?")
+  }
+
+  println(friend)
+
+  def makeRowSeq(row: Int) =
+    for (col <- 1 to 10) yield {
+      val prod = (row * col).toString
+      val padding = " " * (4 - prod.length)
+      padding + prod
+    }
+
+  def makeRow(row: Int) = makeRowSeq(row).mkString
+
+  def multiTable() = {
+    val tableSeq =
+      for (row <- 1 to 10)
+        yield makeRow(row)
+
+    tableSeq.mkString("\n")
+  }
+
+  println(multiTable())
+
 }
