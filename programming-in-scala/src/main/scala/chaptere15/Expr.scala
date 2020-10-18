@@ -32,6 +32,11 @@ object Main {
     case _ => "something else"
   }
 
+  def tupleDemo(expr: Any) = expr match {
+    case (a, b, c) => println("matched " + a + b + c)
+    case _ =>
+  }
+
   def main(args: Array[String]) = {
     val v = Var("x")
     println(v)
@@ -52,6 +57,9 @@ object Main {
     println(describe("hello"))
     println(describe(Nil))
     println(describe(List(1, 2, 3)))
+
+    // tupleDemo
+    tupleDemo(("a ", 3, "-tuple"))
 
   }
 }
