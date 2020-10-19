@@ -4,7 +4,7 @@ package chaptere15
   *
   * @author vsushko
   */
-abstract class Expr
+sealed abstract class Expr
 
 case class Var(name: String) extends Expr
 
@@ -29,12 +29,30 @@ object Main {
     case true => "truth"
     case "hello" => "hi!"
     case Nil => "the empty list"
+    case Number(_) => "a number"
+    case Var(_) => "a variable"
     case _ => "something else"
   }
 
   def tupleDemo(expr: Any) = expr match {
     case (a, b, c) => println("matched " + a + b + c)
     case _ =>
+  }
+
+  def generalSize(x: Any) = x match {
+    case s: String => s.length
+    case m: Map[_, _] => m.size
+    case _ => -1
+  }
+
+  def isStringArray(x: Any) = x match {
+    case a: Array[String] => "yes"
+    case _ => "no"
+  }
+
+  def show(x: Option[String]) = x match {
+    case Some(s) => s
+    case None => "?"
   }
 
   def main(args: Array[String]) = {
@@ -60,6 +78,24 @@ object Main {
 
     // tupleDemo
     tupleDemo(("a ", 3, "-tuple"))
+
+    // typed template
+    println(generalSize("abc"))
+    println(generalSize(Map(1 -> 'a', 2 -> 'b')))
+    println(generalSize(math.Pi))
+
+    // types erasure
+    println(isStringArray(Array("abc")))
+    println(isStringArray(Array(1, 2, 3)))
+
+    val capitals = Map("France" -> "Paris", "Japan" -> "Tokyo")
+    println(capitals get "France")
+    println(capitals get "North Pole")
+
+    // option
+    println(show(capitals get "Japan"))
+    println(show(capitals get "France"))
+    println(show(capitals get "North Pole"))
 
   }
 }
