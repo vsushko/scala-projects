@@ -94,7 +94,7 @@ object ScalaRecap extends App {
   }
 
   // Partial functions
-  val aPartialFunction = PartialFunction[Int, Int] = {
+  val aPartialFunction: PartialFunction[Int, Int] = {
     case 1 => 43
     case 8 => 56
     case _ => 999
@@ -131,6 +131,6 @@ object ScalaRecap extends App {
      - companion objects of the types involved in the method call
    */
   List(1, 2, 3).sorted
-  
+
 
 }
