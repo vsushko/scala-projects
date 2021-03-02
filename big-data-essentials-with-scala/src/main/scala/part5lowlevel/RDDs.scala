@@ -132,12 +132,12 @@ object RDDs extends App {
   // 4
   case class GenreAvgRating(genre: String, rating: Double)
 
-  val avgRatingByGenreeRDD = moviesRDD.groupBy(_.genre).map {
+  val avgRatingByGenreRDD = moviesRDD.groupBy(_.genre).map {
     case (genre, movies) =>
       GenreAvgRating(genre, movies.map(_.rating).sum / movies.size)
   }
 
-  avgRatingByGenreeRDD.toDF.show()
+  avgRatingByGenreRDD.toDF.show()
   moviesRDD.toDF.groupBy(col("genre")).avg("rating").show()
 
   /*
