@@ -42,11 +42,11 @@ object Datasets extends App {
 
   // 2 read the DF from the file
 
-  val schema = Encoders.product[Car].schema
+  // val schema = Encoders.product[Car].schema
 
   // 2 - read the DF from the file
   def readDF(filename: String) = spark.read
-    .schema(schema)
+    .option("inferSchema", "true")
     .json(s"src/main/resources/data/$filename")
 
   val carsDF = readDF("cars.json")
