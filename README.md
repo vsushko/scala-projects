@@ -6,7 +6,7 @@ This repository contains the source code for some Scala courses and is used when
 An implementation of simple file system written in scala ([link](https://github.com/vsushko/scala-projects/tree/master/filesystem)).
 
 ## Certificates
-Look at myscala certificates:
+Look at my scala certificates:
 - [Rock the JVM! Scala and Functional Programming for Beginners](https://www.udemy.com/certificate/UC-B7QQ7EV7/)
 - [Rock the JVM! Advanced Scala and Functional Programming](https://www.udemy.com/certificate/UC-T9KM27C1/)
 - [Spark 3.0 & Big Data Essentials with Scala | Rock the JVM](https://www.udemy.com/certificate/UC-a985778e-add1-4774-b4e3-aafc603e95cd/)
