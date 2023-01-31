@@ -3,7 +3,7 @@
 This repository contains the source code for some Scala courses and is used when it is necessary to remember the programming language for solving backend and Data Science tasks.
 
 ## File system
-An implementation of simple file system written in scala - [link](https://github.com/vsushko/scala-projects/tree/master/filesystem)
+An implementation of simple file system written in scala ([link](https://github.com/vsushko/scala-projects/tree/master/filesystem)).
 
 ## Certificates
 Look at myscala certificates:
